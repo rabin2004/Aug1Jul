@@ -9,18 +9,21 @@ import org.testng.annotations.Test;
 
 import base.TestBase;
 import pageFactory.HomePage;
+import pageFactory.LoginSuccessPage;
 
 public class LogInFunctionalityTest extends TestBase {
 	HomePage hp;
+	LoginSuccessPage lsp;
 	
-	public LogInFunctionalityTest() throws IOException {
+	public LogInFunctionalityTest() throws IOException{
 		super();
-		hp = new HomePage();
 	}
 	
 	@BeforeMethod
-	public void loadUrl() {
+	public void loadUrl() throws IOException {
 		initialization();
+		hp = new HomePage();
+		lsp = new LoginSuccessPage();
 	}
 	
 	@Test
@@ -30,8 +33,7 @@ public class LogInFunctionalityTest extends TestBase {
 		hp.typePassword(prop.getProperty("validPassword"));
 		hp.clickSubmitBtn();
 		
-		Assert.assertEquals(driver.getTitle(), "Login: Mercury Tours");
-		
+		Assert.assertEquals(lsp.getLoginSuccessPageTitle(), "Login: Mercury Tours");
 	}
 	
 	@AfterMethod

@@ -2,7 +2,6 @@ package pageFactory;
 
 import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,12 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import base.TestBase;
 
 public class HomePage extends TestBase {
-	WebDriver driver;
-
-	public HomePage() throws IOException {
-		super();
-		PageFactory.initElements(driver, this);
-	}
 	
 	@FindBy(name="userName") // WebElement username = driver.findElement(By.name("userName"));
 	WebElement usernameTxtField;
@@ -25,6 +18,10 @@ public class HomePage extends TestBase {
 	
 	@FindBy(name="submit")
 	WebElement submitBtn;
+	
+	public HomePage() throws IOException {
+		PageFactory.initElements(driver, this);
+	}
 	
 	public void typeUsername(String username) {
 		usernameTxtField.sendKeys(username);
