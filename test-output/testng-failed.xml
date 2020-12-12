@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="step_definitions.LogInFunctionalityTest">
+      <class name="step_definitions.HomePageLinksTest">
         <methods>
-          <include name="positiveLoginFunctionalityTest"/>
           <include name="closeBrowser"/>
+          <include name="registerLinkTest"/>
           <include name="loadUrl"/>
         </methods>
-      </class> <!-- step_definitions.LogInFunctionalityTest -->
+      </class> <!-- step_definitions.HomePageLinksTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

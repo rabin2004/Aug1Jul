@@ -36,6 +36,17 @@ public class LogInFunctionalityTest extends TestBase {
 		Assert.assertEquals(lsp.getLoginSuccessPageTitle(), "Login: Mercury Tours");
 	}
 	
+	@Test
+	public void negativeLoginFunctionalityTest() {
+		Assert.assertEquals(hp.getHomePageTitle(), "Welcome: Mercury Tours");
+		hp.typeUsername(prop.getProperty("invalidUsername"));
+		hp.typePassword(prop.getProperty("invalidPassword"));
+		hp.clickSubmitBtn();
+		
+		Assert.assertEquals(hp.getEnterValidCredentialsErrorMsg(), 
+				"Enter your userName and password correct");	
+	}
+	
 	@AfterMethod
 	public void closeBrowser() {
 		tearDown();
