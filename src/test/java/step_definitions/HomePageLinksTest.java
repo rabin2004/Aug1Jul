@@ -14,7 +14,7 @@ import pageFactory.RegisterPage;
 public class HomePageLinksTest extends TestBase {
 	HomePage hp;
 	RegisterPage rp;
-
+	// testing Git/GitHub
 	public HomePageLinksTest() throws IOException {
 		super();
 	}
